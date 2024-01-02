@@ -1,29 +1,29 @@
-<!文档类型html >
-<超文本标记语言>
-<头>
-  <标题>倒计时示例</标题>
-</头>
-<身体>
-  <氕>距离 开学 还有：</氕>
-  <差异身份证明（identification）=“倒计时”></差异>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>倒计时示例</title>
+</head>
+<body>
+  <h1>距离 见面 还有：</h1>
+  <div id="countdown"></div>
  
-  <脚本>
+  <script>
     // 目标日期
-    定义变量 目标日期 = 新的日期(" 2024-03-0300:00:00 ");
+    var targetDate = new Date("2024-03-03T00:00:00");
  
     // 更新倒计时
-    功能 更新倒计时() {
-      定义变量 现在 = 新的日期();
-      定义变量 时间左侧= targetDate-now；
+    function updateCountdown() {
+      var now = new Date();
+      var timeLeft = targetDate - now;
  
       // 计算剩余的天、小时、分钟和秒
-      定义变量 天=数学。地面(timeLeft /(1000 * 60 * 60 * 24));
-      定义变量 小时=数学。地面((剩余时间%(1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      定义变量 分钟=数学。地面((剩余时间%(1000 * 60 * 60)) / (1000 * 60));
-      定义变量 秒=数学。地面((剩余时间%(1000 * 60)) / 1000);
+      var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
  
       // 更新页面上的倒计时显示
-文档。getElementById(“倒计时”).innerHTML=天数+"天 "+小时+"小时 "+分钟+"分钟 "+秒钟+"秒";
+      document.getElementById("countdown").innerHTML = days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒";
  
       // 每秒钟更新一次倒计时
       setTimeout(updateCountdown, 1000);
