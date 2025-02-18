@@ -1,36 +1,45 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF - 8">
-  <title>登录系统</title>
-</head>
-
-<body>
-  <div id="loginContainer">
-    <label for="username">用户名:</label>
-    <input type="text" id="username" required />
-    <br />
-    <label for="password">密码:</label>
-    <input type="password" id="password" required />
-    <br />
-    <input type="button" id="loginButton" value="登录">
-  </div>
-  <script>
-    document.getElementById('loginButton').onclick = function () {
-      var username = document.getElementById('username').value;
-      var password = document.getElementById('password').value;
-
-      if (username === 'aaa' && password === '123') {
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('username', username);
-        alert('登录成功');
-        location.href='main.html';
-      } else {
-        alert('用户名或密码错误');
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>成为我的恋人吗？</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FBB6DE; /* 粉色背景 */
+      text-align: center;
+      padding-top: 50px;
     }
-  </script>
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+    .yes-button {
+      background-color: #E9967A; /* 橙色按钮 */
+      color: white;
+    }
+    .no-button {
+      background-color: #4682B4; /* 蓝色按钮 */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>可以成为我的恋人吗？</h1>
+  <img src="path_to_your_image.png" alt="卡通小狗" width="300">
+  <div>
+    <button class="button yes-button">可以</button>
+    <button class="button no-button">不要</button>
+  </div>
 </body>
-
 </html>
